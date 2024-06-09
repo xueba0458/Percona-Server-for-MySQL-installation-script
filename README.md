@@ -1,16 +1,10 @@
-您可以使用 markdown 的链接和语言标识符来实现多语言支持。以下是如何修改您的 README.md 以支持多种语言的示例：
-
-```markdown
 # Percona Server for MySQL 安装脚本
 
 这个脚本可以帮助您快速安装 Percona Server for MySQL。
 
 ## 快速执行脚本
-
 您可以使用以下命令快速下载并执行安装脚本：
-
 ### 使用 `curl`
-
 ```sh
 curl -fsSL https://raw.githubusercontent.com/xueba0458/Percona-Server-for-MySQL-installation-script/main/install.sh | bash
 ```
