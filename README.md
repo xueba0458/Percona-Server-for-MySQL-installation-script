@@ -1,6 +1,15 @@
 # Percona-Server-for-MySQL-installation-script
-Percona Server for MySQL installation script
-Percona Server for MySQL安装脚本
+# Percona Server for MySQL安装脚本
+# 快速执行脚本
+您可以使用以下命令快速下载并执行安装脚本：
+## 使用 `curl`
+```sh
+curl -fsSL https://raw.githubusercontent.com/xueba0458/Percona-Server-for-MySQL-installation-script/main/install.sh | bash
+```
+## 使用 `wget`
+```shell
+wget -qO- https://raw.githubusercontent.com/xueba0458/Percona-Server-for-MySQL-installation-script/main/install.sh | bash
+```
 # 为什么我要写这个脚本？
 1，官方文档没有提供需要的依赖，需要等编译报错之后才知道需要哪个依赖，很麻烦！
 2，方便我自己快速编译安装Percona Server for MySQL
