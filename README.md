@@ -12,6 +12,6 @@ ps：我也不知道是不是只有我才有问题，还是官方的代码有问
 # 手动安装流程
 ## RHEL9安装教学
 1，安装依赖
-'''
+```shell
 yum install git sudo gcc cmake make gcc-toolset-12-gcc gcc-toolset-12-gcc-c++ gcc-toolset-12-binutils gcc-toolset-12-annobin-annocheck gcc-toolset-12-annobin-plugin-gcc openssl-devel openldap-devel cyrus-sasl-devel cyrus-sasl-scram krb5-devel ncurses-devel readline-devel bison libcurl-devel libudev-devel libtirpc-devel rpcgen libaio-devel libtirpc-devel
-'''
+```
