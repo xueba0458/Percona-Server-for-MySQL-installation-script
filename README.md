@@ -163,38 +163,6 @@ else
 fi
 ```
 
-7. Create a system service and start it:
-
-```shell
-if [ ! -f "/usr/lib/systemd/system/mysql.service" ]; then
-    echo "Creating systemd service file..."
-    cat <<EOF > /usr/lib/systemd/system/mysql.service
-[Unit]
-Description=MySQL Server
-#Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/usr/local/mysql/etc/my.cnf
-PIDFile=/mysql/data/mysqld.pid
-Restart=on-failure
-RestartPreventExitStatus=1
-TimeoutSec=0
-PrivateTmp=false
-LimitNOFILE=65535
-LimitNPROC=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-else
-    echo "systemd service file already exists, skip creation."
-fi
-```
-
 ## 简体中文
 
 ### 我为什么要写这个脚本？
@@ -338,37 +306,3 @@ else
     echo "MySQL 配置文件已存在，跳过创建。"
 fi
 ```
-
-7. 创建系统服务并启动：
-
-```shell
-if [ ! -f "/usr/lib/systemd/system/mysql.service" ]; then
-    echo "创建 systemd 服务文件..."
-    cat <<EOF > /usr/lib/systemd/system/mysql.service
-[Unit]
-Description=MySQL Server
-#Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/usr/local/mysql/etc/my.cnf
-PIDFile=/mysql/data/mysqld.pid
-Restart=on-failure
-RestartPreventExitStatus=1
-TimeoutSec=0
-PrivateTmp=false
-LimitNOFILE=65535
-LimitNPROC=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-else
-    echo "systemd 服务文件已存在，跳过创建。"
-fi
-```
-
-希望这可以帮助你! 
